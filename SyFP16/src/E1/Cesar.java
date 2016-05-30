@@ -9,6 +9,17 @@ package E1;
  *
  * @author arturohdez
  */
-public class Cesar {
+public class Cesar 
+{
+  public String cifrar (String hola, int con){
     
+      String cifrar ="hola";
+      for(int i= 0;i<=hola.length();i=i+1)
+      {
+       char "no supe como poner para que salga cualquier letra"=m.charArt(i);
+       
+      }
+          
+}
+  
 }
