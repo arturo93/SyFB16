@@ -11,15 +11,41 @@ package E1;
  */
 public class Cesar 
 {
-  public String cifrar (String hola, int con){
-    
-      String cifrar ="hola";
-      for(int i= 0;i<=hola.length();i=i+1)
-      {
-       char "no supe como poner para que salga cualquier letra"=m.charArt(i);
+  public String cifrar (String m, int constante)
+  {
+    String resultado =" ";
+    for(int i= 0;i<m.length();i++)
+    {
+       resultado=resultado+(char)(m.charAt(i)+constante);
+    }
+    return resultado;
        
-      }
-          
-}
-  
+       
+    }
+            public static void main(String[] args) 
+    {
+        Cesar c = new Cesar ();
+        
+        String s =c.cifrar("hola",3);
+        
+        System.out.println(s);
+        
+        Cesar a = new Cesar();
+     
+     String b = a.descifrar(s,3);
+     
+     System.out.println(b);
+
+        
+    }
+     public String descifrar (String n,int constante) 
+     {
+         String resultado =" ";
+         for(int i= 0;i<n.length();i++)
+    {
+       resultado=resultado+(char)(n.charAt(i)-constante);
+    }
+    return resultado;
+     }
+     
 }
