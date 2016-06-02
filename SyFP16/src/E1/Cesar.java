@@ -16,7 +16,13 @@ public class Cesar
     String resultado =" ";
     for(int i= 0;i<m.length();i++)
     {
-       resultado=resultado+(char)(m.charAt(i)+constante);
+       if ((int)m.charAt(i)==10)
+       {
+           resultado= resultado +(m.charAt(i));
+       }
+       else{
+           resultado=resultado+(char)(m.charAt(i)+constante);
+       }
     }
     return resultado;
        
