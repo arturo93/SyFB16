@@ -37,13 +37,15 @@ public class CifradoG extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) {                                                
                 String d = tc.getText();
                 Cesar c = new Cesar();
+                String s;
                 String d = c.cifrar(s,9);
-                ta.setText(d);
+                
+                 ta.setText(d);
             }
               
-            }
-        })
-                {
+            
+        }
+           
         
     }
 
@@ -61,7 +63,7 @@ public class CifradoG extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tc = new javax.swing.JTextArea();
         cifrar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        descifrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         co = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -79,7 +81,7 @@ public class CifradoG extends javax.swing.JFrame {
 
         cifrar.setText("jButton1");
 
-        jButton2.setText("jButton2");
+        descifrar.setText("jButton2");
 
         jLabel1.setText("constante");
 
@@ -109,7 +111,7 @@ public class CifradoG extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cifrar)
-                            .addComponent(jButton2))
+                            .addComponent(descifrar))
                         .addGap(26, 26, 26))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(33, 33, 33)
@@ -145,7 +147,7 @@ public class CifradoG extends javax.swing.JFrame {
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(29, 29, 29)
-                        .addComponent(jButton2)
+                        .addComponent(descifrar)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -191,7 +193,7 @@ public class CifradoG extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cifrar;
     private javax.swing.JTextField co;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton descifrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
