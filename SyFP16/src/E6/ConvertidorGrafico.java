@@ -20,6 +20,7 @@ public class ConvertidorGrafico extends javax.swing.JFrame {
     public ConvertidorGrafico() 
     {
         initComponents();
+        cb1.removeAllItems();
         cb1.addItem("centimetros");
         cb1.addItem("metros");
         cb1.addItem("kilometros");
@@ -28,6 +29,7 @@ public class ConvertidorGrafico extends javax.swing.JFrame {
         cb1.addItem("yardas");
         cb1.addItem("millas");
         
+        cb2.removeAllItems();
         cb2.addItem("centimetros");
         cb2.addItem("metros");
         cb2.addItem("kilometros");
@@ -44,6 +46,14 @@ public class ConvertidorGrafico extends javax.swing.JFrame {
                 String Text1 = (String) cb1.getSelectedItem();
                 String Text2 = (String) cb2.getSelectedItem();
                 tf1.getText();
+                Double p=new Double(tf1.getText());
+                double value =p.doubleValue();
+                Convertidor con= new Convertidor();//instancia 
+                double a =con.convertir(Text1,value, Text2);
+               
+                Double t= new Double(a);
+                tf2.setText(t.toString());//ASIGNAR
+                
             }
         });
     }
@@ -66,15 +76,24 @@ public class ConvertidorGrafico extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        tf1.setText("jTextField1");
+        tf1.setFont(new java.awt.Font("AppleGothic", 0, 13)); // NOI18N
 
-        tf2.setText("jTextField2");
+        tf2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf2ActionPerformed(evt);
+            }
+        });
 
         cb1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         cb2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        b1.setText("jButton1");
+        b1.setText("Convertir");
+        b1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -113,6 +132,14 @@ public class ConvertidorGrafico extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b1ActionPerformed
+
+    private void tf2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf2ActionPerformed
 
     /**
      * @param args the command line arguments

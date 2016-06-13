@@ -70,13 +70,15 @@
   <SubComponents>
     <Component class="javax.swing.JTextField" name="tf1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="AppleGothic" size="13" style="0"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tf2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField2"/>
-      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf2ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="cb1">
       <Properties>
@@ -104,8 +106,11 @@
     </Component>
     <Component class="javax.swing.JButton" name="b1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jButton1"/>
+        <Property name="text" type="java.lang.String" value="Convertir"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b1ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
