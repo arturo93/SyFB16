@@ -9,6 +9,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.AbstractTableModel;
 
 /**
@@ -17,21 +19,72 @@ import javax.swing.table.AbstractTableModel;
  */
 public class Emplo extends AbstractTableModel {
     String m [][];
+    String guardar;
+    int i = 0;
+    String cols[];
+    String linea ;
+    
 
-    public Emplo() {
+    public int numrenglon ()
+    {
+       try {
+           BufferedReader br = null ;
+           String linea;
+            br = new BufferedReader(new FileReader (guardar));
+            linea = br.readLine();
+            while(linea !=null)
+            {
+                i=i+1;
+                linea= br.readLine();
+                
+            }
+            
+       }
+                    
+      catch (FileNotFoundException ex) {
+            
+        } catch (IOException ex) {
+            Logger.getLogger(Emplo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return i;
+    }
+            
+    public int numcontar()
+    {        
+        try {BufferedReader br = null ;
+            br = new BufferedReader(new FileReader (guardar));
+            linea= br.readLine();
+            cols = linea.split(",");
+            i=cols.length;
+            
+            
+            
+                    
+                    } catch (FileNotFoundException ex) {
+            
+        } catch (IOException ex) {
+            Logger.getLogger(Emplo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    return i;
+    }
+    
+    
+    public Emplo() 
+    {
+        
     }
     
 
     @Override
     public int getRowCount() 
     {
-        return 100;
+        return numrenglon();
     }
 
     @Override
     public int getColumnCount() 
     {
-        return 6;
+        return numcontar();
     }
 
     @Override
@@ -41,7 +94,7 @@ public class Emplo extends AbstractTableModel {
     }
 
     public Emplo(String s) throws IOException
-    {   m=new String [100][6];
+    {   m=new String [numrenglon()][numcontar()];
         BufferedReader br = null;
         String row [];
         
@@ -57,7 +110,7 @@ public class Emplo extends AbstractTableModel {
                 linea = br.readLine();
                 row= linea.split(",");
                 m[0]=row;
-                int i = 0;
+                
                 i=i+1;
                 linea = br.readLine();
             }
@@ -73,5 +126,7 @@ public class Emplo extends AbstractTableModel {
         }
         
         
+        
+        
     }
-    }   
+}   
