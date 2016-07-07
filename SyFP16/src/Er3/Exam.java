@@ -158,7 +158,7 @@ public int Puzzle ()
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) 
     {
-        return
+        return 4;
     }
     
 }
